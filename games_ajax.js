@@ -26,8 +26,12 @@ var baseUrl = new URL("https://games-world.herokuapp.com/games");
 function displayGames(games){
     var gamesList = document.getElementById("games");
     var items = document.createElement("li");
+    var img = document.createElement("IMG")
+    img.src = games.imageUrl;
     items.style.padding = "15px"
-    items.innerHTML = games.title + " : " + games._id;
+    items.innerHTML = games.title + " : " + games.description;
+    img.innerHTML = games.imageUrl;
     gamesList.appendChild(items);
+    gamesList.appendChild(img);
 }
 
